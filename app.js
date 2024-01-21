@@ -258,6 +258,11 @@ async function waitForRunCompletion(threadId, runId) {
   }
 }
 
+app.get("/", (request, res) => {
+  res.set("Content-Type", "text/html");
+  res.send(Buffer.from("<h2>Hello , Chat API</h2>"));
+});
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
