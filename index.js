@@ -12,7 +12,7 @@ const app = express();
 const port = process.env.PORT || 8880;
 
 // Create an OpenAI connection
-const secretKey = "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";
+const secretKey = process.env.OPENAI_API_KEY;
 const openai = new OpenAI({
   apiKey: secretKey,
 });
