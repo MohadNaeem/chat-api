@@ -15,7 +15,6 @@ const port = process.env.PORT || 8880;
 const secretKey = process.env.OPENAI_API_KEY;
 const openai = new OpenAI({
   apiKey: secretKey,
-
 });
 
 async function askQuestion(question) {
@@ -71,9 +70,9 @@ async function createAssistant() {
 
 app.use(bodyParser.json());
 
-app.post("/ask", async (req, res) => {
+app.get("/ask", async (req, res) => {
   try {
-    const userQuestion = req.body.question;
+    const userQuestion = req.params.question;
 
     // Create a thread using the assistantId
     const assistantId = await createAssistant();
