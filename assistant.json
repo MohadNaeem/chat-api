@@ -1,13 +1,11 @@
 {
-    "assistantId": "asst_EeGiTpxZXeXB7767QztoGfpW",
-    "name": "MainCore Platform Helper",
-    "instructions": "You're a open AI based assistant, helping regarding the NexCore .",
-    "tools": [
-      {
-        "type": "retrieval"
-      }
-    ],
-    "model": "gpt-3.5-turbo-1106"
-  }
-
-  
+  "assistantId": "asst_EeGiTpxZXeXB7767QztoGfpW",
+  "name": "MainCore Platform Helper",
+  "instructions": "You're a open AI based assistant, helping regarding the NexCore .",
+  "tools": [
+    {
+      "type": "retrieval"
+    }
+  ],
+  "model": "gpt-4-1106-preview"
+}

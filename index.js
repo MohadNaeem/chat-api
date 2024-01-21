@@ -32,22 +32,11 @@ async function createAssistant() {
     let assistantId;
 
     try {
-      // const assistantData = await fsPromises.readFile(
-      //   assistantFilePath,
-      //   "utf8"
-      // );
-      assistantDetails = JSON.parse({
-        assistantId: "asst_EeGiTpxZXeXB7767QztoGfpW",
-        name: "MainCore Platform Helper",
-        instructions:
-          "You're a open AI based assistant, helping regarding the NexCore .",
-        tools: [
-          {
-            type: "retrieval",
-          },
-        ],
-        model: "gpt-3.5-turbo-1106",
-      });
+      const assistantData = await fsPromises.readFile(
+        assistantFilePath,
+        "utf8"
+      );
+      assistantDetails = JSON.parse(assistantData);
       assistantId = assistantDetails.assistantId;
       console.log("\nExisting assistant detected.\n");
     } catch (error) {
@@ -58,7 +47,7 @@ async function createAssistant() {
         instructions:
           "You're a murder mystery assistant, helping solve murder mysteries.",
         tools: [{ type: "retrieval" }], // configure the retrieval tool to retrieve files in the future
-        model: "gpt-3.5-turbo-1106",
+        model: "gpt-4-1106-preview",
       };
 
       const assistant = await openai.beta.assistants.create(assistantConfig);
