@@ -47,7 +47,7 @@ async function createAssistant() {
         instructions:
           "You're a murder mystery assistant, helping solve murder mysteries.",
         tools: [{ type: "retrieval" }], // configure the retrieval tool to retrieve files in the future
-        model: "gpt-4-1106-preview",
+        model: "gpt-3.5-turbo-1106",
       };
 
       const assistant = await openai.beta.assistants.create(assistantConfig);
