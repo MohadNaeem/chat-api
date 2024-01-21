@@ -32,11 +32,22 @@ async function createAssistant() {
     let assistantId;
 
     try {
-      const assistantData = await fsPromises.readFile(
-        assistantFilePath,
-        "utf8"
-      );
-      assistantDetails = JSON.parse(assistantData);
+      // const assistantData = await fsPromises.readFile(
+      //   assistantFilePath,
+      //   "utf8"
+      // );
+      assistantDetails = JSON.parse({
+        assistantId: "asst_EeGiTpxZXeXB7767QztoGfpW",
+        name: "MainCore Platform Helper",
+        instructions:
+          "You're a open AI based assistant, helping regarding the NexCore .",
+        tools: [
+          {
+            type: "retrieval",
+          },
+        ],
+        model: "gpt-3.5-turbo-1106",
+      });
       assistantId = assistantDetails.assistantId;
       console.log("\nExisting assistant detected.\n");
     } catch (error) {
